@@ -1,0 +1,22 @@
+{
+  "name": "learning_karma_mk_1",
+  "version": "1.0.0",
+  "description": "I am learning to use Karma and Jasmine to test some simple JavaScript code",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-fixture": "^0.2.6",
+    "karma-html2js-preprocessor": "^1.1.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-json-fixtures-preprocessor": "0.0.6"
+  },
+  "scripts": {
+    "default_test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start karma.conf.js"
+  },
+  "author": "Marcus",
+  "license": "MIT"
+}

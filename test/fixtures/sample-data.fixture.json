@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "sword" , 
+        "class" : "weapon" ,
+        "damage" : 10 ,
+        "speed" : 1.5
+    },
+    {
+        "name" : "axe" , 
+        "class" : "weapon" ,
+        "damage" : 15 ,
+        "speed" : 1.2
+    }
+]
