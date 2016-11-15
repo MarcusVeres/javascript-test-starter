@@ -7,7 +7,7 @@
     };
 
     // 
-    var settings = {
+    var settings = game.settings = {
 
         totalMoles : 6 , 
         difficulty : 10 , 
@@ -18,19 +18,18 @@
         moleHoleColor : '#222' , 
         moleClickedColor : '#CC0000' , 
 
+        totalPrizes : 8 , 
         prizeWidth : 100 , 
         prizeHeight : 80 , 
 
     }
-    game.settings = settings;
 
     // 
-    var data = {
+    var data = game.data = {
         currentScore : 0 , 
         moleArray : [] , 
         prizeArray : [] ,
     }
-    game.data = data;
 
     // DOM elements
     var canvasElement;
@@ -91,6 +90,14 @@
         }
     }
 
+    var generatePrizeArray = game.generatePrizeArray = function()
+    {
+        for( var i = 0 ; i < 8 ; i++ )
+        {
+            var prize = new Prize();
+            data.prizeArray.push( prize );
+        }
+    }
  
     // -------------------------------------
     // the Mole class

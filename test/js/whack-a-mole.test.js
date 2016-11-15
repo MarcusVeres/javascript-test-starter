@@ -49,6 +49,11 @@ describe( 'Whack a Mole' , function() {
             expect( myPrize.active ).toBe( true );
         });
 
+        it( 'should populate the prizeArray with the totalPrizes number of prizes' , function() {
+            game.generatePrizeArray();
+            expect( game.data.prizeArray.length ).toBe( game.settings.totalPrizes );
+        });
+
     });
 
 });
