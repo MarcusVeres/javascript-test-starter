@@ -13,11 +13,25 @@ module.exports = function(config) {
         frameworks: [ 'jasmine' , 'fixture' ],
 
 
+        // preprocess matching files before serving them to the browser
+        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+        preprocessors: {
+                '**/*.html' : ['html2js'] ,
+                '**/*.json' : ['json_fixtures']
+        },
+
+
         // list of files / patterns to load in the browser
         files: [
-                'src/js/*.js' ,
-                'test/js/*.js' ,
-                'test/fixtures/**/*'
+
+            'index.html' ,
+            '/index.html' ,
+            './index.html' ,
+            '../index.html' ,
+            'test/fixtures/**/*.html',
+            'test/js/*.test.js',
+            'src/js/*.js',
+            // 'test/fixtures/**/*' ,
         ],
 
 
@@ -26,14 +40,6 @@ module.exports = function(config) {
             '**/*.swp' ,
             '**/*backup*' ,
         ],
-
-
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-        preprocessors: {
-                '**/*.html' : ['html2js'] ,
-                '**/*.json' : ['json_fixtures']
-        },
 
 
         // setup the karma-json-fixtures-preprocessor plugin

@@ -1,21 +1,36 @@
+<!doctype html>
 <html>
 <head>
 
-    <title>Magic Calculator</title>
+    <title>Whack a Mole</title>
+
+    <link rel="stylesheet" href="../_shared/css/basic.css">
+    <link rel="stylesheet" href="static/css/styles.css">
 
 </head>
 <body>
 
+    <div class="content-wrapper centered">
+        <canvas id="canvas-element" width="720" height="480"></canvas>
+        <h4 id="hud"></h4>
+    </div>
+
+    <!-- the game code -->
+    <script type="text/javascript" src="src/js/whack-a-mole.js"></script>
+    <script>
+        game.init();
+    </script>
+
+    <!--
     <input id="x" type="text">
     <input id="y" type="text">
     <input id="add" type="button" value="Add Numbers">
-
     Result: <span id="result" />
-
     <script type="text/javascript" src="src/js/calculator.js"></script>
     <script>
         calculator.init();
     </script>
+    -->
 
 </body>
 </html>
