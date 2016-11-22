@@ -17,6 +17,7 @@
         moleColor : '#CCC' , 
         moleHoleColor : '#222' , 
         moleClickedColor : '#CC0000' , 
+        moleGraphic : 'http://placehold.it/200/200' , 
 
         totalPrizes : 6 , 
         prizeWidth : 100 , 
@@ -102,6 +103,17 @@
     // -------------------------------------
     // the Mole class
     function Mole( data )
+    {
+        this.img = new Image();
+        this.img.src = settings.moleGraphic;
+        this.width = settings.moleWidth; 
+        this.height = settings.moleHeight; 
+        this.color = settings.moleColor; 
+        this.clickedColor = settings.moleClickedColor; 
+    }
+    game.classes.Mole = Mole;
+
+    Mole.prototype.animate = function()
     {
         // the mole will play the "rising" animation when active, and "falling" animation when inactive
     }
