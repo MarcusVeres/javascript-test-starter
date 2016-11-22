@@ -18,7 +18,7 @@
         moleHoleColor : '#222' , 
         moleClickedColor : '#CC0000' , 
 
-        totalPrizes : 8 , 
+        totalPrizes : 6 , 
         prizeWidth : 100 , 
         prizeHeight : 80 , 
 
@@ -92,7 +92,7 @@
 
     var generatePrizeArray = game.generatePrizeArray = function()
     {
-        for( var i = 0 ; i < 8 ; i++ )
+        for( var i = 0 ; i < settings.totalPrizes ; i++ )
         {
             var prize = new Prize();
             data.prizeArray.push( prize );
