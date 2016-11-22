@@ -48,8 +48,11 @@
         // vars for storage
         var canvasHeight = canvasElement.height;
         var canvasWidth = canvasElement.width;
-
+        
+        // reset content
         data.currentScore = 0;
+        data.moleArray = [];
+        data.prizeArray = [];
     };
    
     // -------------------------------------
@@ -99,17 +102,20 @@
             data.prizeArray.push( prize );
         }
     }
- 
+
     // -------------------------------------
     // the Mole class
-    function Mole( data )
+    function Mole( object = {} )
     {
         this.img = new Image();
-        this.img.src = settings.moleGraphic;
-        this.width = settings.moleWidth; 
-        this.height = settings.moleHeight; 
-        this.color = settings.moleColor; 
-        this.clickedColor = settings.moleClickedColor; 
+        this.img.src = object.img || settings.moleGraphic;
+        this.width = object.width || settings.moleWidth; 
+        this.height = object.height || settings.moleHeight; 
+        this.color = object.color || settings.moleColor; 
+        this.clickedColor = object.clickedColor || settings.moleClickedColor; 
+
+        // update the moleArray
+        data.moleArray.push( this );
     }
     game.classes.Mole = Mole;
 

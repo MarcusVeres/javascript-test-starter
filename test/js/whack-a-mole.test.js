@@ -85,8 +85,20 @@ describe( 'Whack a Mole' , function() {
             expect( mole.img.src ).toBe( game.settings.moleGraphic );
         });
 
-        it( 'should be able to draw a mole to the screen' , function() {
-            // not sure how to test this 
+        it( 'should add a mole to the moleArray when it is created' , function() {
+            var mole = new game.classes.Mole();
+            expect( game.data.moleArray.length ).toBe( 1 );
+        });
+
+        it( 'should override default settings if a the data object has properties, and default to settings if not' , function() {
+            var mole = new game.classes.Mole({
+                height: 200 ,
+                color: 'blue' ,
+            });
+            expect( mole.height ).toBe( 200 );
+            expect( mole.color ).toBe( 'blue' );
+            expect( mole.width ).toBe( game.settings.moleWidth );
+            expect( mole.clickedColor ).toBe( game.settings.moleClickedColor );
         });
 
         it( 'should render an image and a clipping mask' , function() {
